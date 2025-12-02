@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  tts-app:
+    container_name: tts-home-server
+    build: .  # Lệnh này bảo Portainer tự tìm Dockerfile trong repo để build
+    ports:
+      - "8501:8501" # Mở cổng 8501
+    restart: unless-stopped
+    image: tts-home-image:latest
