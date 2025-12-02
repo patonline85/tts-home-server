@@ -3,10 +3,8 @@ version: '3.8'
 services:
   tts-app:
     container_name: tts-home-server
-    build: .  # Lệnh này bảo Portainer tự tìm Dockerfile trong repo để build
+    build: .
     ports:
-      - "8501:8501" # Mở cổng 8501
+      - "8501:8501"
     restart: unless-stopped
-
-    image: tts-home-image:latest
     command: streamlit run app.py --server.port=8501 --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false --browser.gatherUsageStats=false
